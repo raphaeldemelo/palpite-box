@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <React.Fragment>
             <div className={styles.headerwhapper}>
-                <div className='container mx-auto '>
+                <div className='container w-40 mx-auto'>
                     <Link href='/'>
                        <a><img className='mx-auto' src='/logo_palpitebox.png' alt=' PalpiteBox' /></a>
                     </Link>
