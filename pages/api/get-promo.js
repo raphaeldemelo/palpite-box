@@ -3,8 +3,13 @@ import { GoogleSpreadsheet } from 'google-spreadsheet';
 
 const doc = new GoogleSpreadsheet(process.env.SHEET_DOC_ID);
 
-export default async (req, res) => {
+const fromBase64 = value => {
+    const buff = new Buffer.from(value, 'base64');
+    return buff.toString('ascii');
+}
 
+export default async (req, res) => {
+    console.log(fromBase64(process.env.SHEET_PRIVATE_KEY))
     try {
 
         await doc.useServiceAccountAuth({
